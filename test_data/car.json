@@ -1,0 +1,10 @@
+{
+  "id": "88cc30d4-931f-11ec-b909-0242ac120002",
+  "name": "Volkswagen Polo",
+  "image": "https://183024.selcdn.ru/images_service/resize/183024.selcdn.ru/vwgr_available_cars/volkswagen/polo/polo_sedan_2020/polo_sedan_2020-status/liftback/0q0q/2.png/211x375/4055794590.png",
+  "fuel": "350",
+  "price": "10",
+  "currency": "rub",
+  "priceUnit": "MINUTE",
+  "equipment": ["navigator", "bluetooth", "baby_chair"]
+}

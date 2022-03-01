@@ -1,11 +1,17 @@
 import React, { useRef } from "react";
-import { GoogleMap } from "@react-google-maps/api";
+import { GoogleMap, Marker } from "@react-google-maps/api";
 import styles from './map.module.css'
+import geoIcon from '../../assets/svg/geo-alt-fill.svg'
 
 
 const containerStyle = {
     width: '100%',
     height: '100%'
+};
+
+const defaultCenter = {
+    lat: 55.7522,
+    lng: 37.6156
 };
 
 const defaultOptions = {
@@ -22,7 +28,7 @@ const defaultOptions = {
     fullscreenControl: false
 }
 
-const Map = ({ center }) => {
+const Map = () => {
 
     const mapRef = useRef(undefined)
 
@@ -33,20 +39,22 @@ const Map = ({ center }) => {
     const onUnmount = React.useCallback(function callback() {
         mapRef.current = undefined
     }, [])
-    console.log(styles)
 
     return (
         <div className={styles.container}>
             <GoogleMap
                 mapContainerStyle={containerStyle}
-                center={center}
+                center={defaultCenter}
                 zoom={10}
                 onLoad={onLoad}
                 onUnmount={onUnmount}
                 options={defaultOptions}
             >
                 { /* Child components, such as markers, info windows, etc. */}
-                <></>
+                    <Marker
+                        position={defaultCenter}
+                        icon={geoIcon}
+                    />
             </GoogleMap>
         </div>
     )
