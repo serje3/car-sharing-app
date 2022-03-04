@@ -1,0 +1,61 @@
+.car-card{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    height: 100%;
+    width: 40%;
+    -webkit-user-drag: none;
+    padding: 20px;
+
+    background-color: aliceblue;
+    border: 3px solid #020202;
+    visibility: hidden;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+}
+
+.car-card > * {
+    -webkit-user-drag: none;
+}
+
+.car-card.entering{
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    visibility: visible !important;
+}
+
+.car-card.entered{
+    visibility: visible !important;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+.car-card.exiting{
+    visibility: visible !important;
+    -webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.car-card.exited{
+    visibility: hidden !important;
+}
+
+.car-card-close{
+    float: right;
+    cursor: pointer;
+}
+
+.car-card-title{
+    text-align: center;
+    margin-top:4px;
+}
+
+.car-card-image{
+    width: 100%;
+    margin: 0 auto;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+

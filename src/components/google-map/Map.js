@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
-import { GoogleMap, Marker } from "@react-google-maps/api";
-import styles from './map.module.css'
-import geoIcon from '../../assets/svg/geo-alt-fill.svg'
+import { GoogleMap } from "@react-google-maps/api";
+import { useDispatch } from "react-redux";
+import styles from './Map.module.css'
+import CarMarkers from "./CarMarkers";
+import { fetchMarkers } from "../../redux/actions";
 
 
 const containerStyle = {
@@ -29,12 +31,13 @@ const defaultOptions = {
 }
 
 const Map = () => {
-
+    const dispatch = useDispatch()
     const mapRef = useRef(undefined)
 
     const onLoad = React.useCallback(function callback(map) {
         mapRef.current = map
-    }, [])
+        dispatch(fetchMarkers())
+    }, [dispatch])
 
     const onUnmount = React.useCallback(function callback() {
         mapRef.current = undefined
@@ -50,11 +53,7 @@ const Map = () => {
                 onUnmount={onUnmount}
                 options={defaultOptions}
             >
-                { /* Child components, such as markers, info windows, etc. */}
-                    <Marker
-                        position={defaultCenter}
-                        icon={geoIcon}
-                    />
+                <CarMarkers/>
             </GoogleMap>
         </div>
     )
