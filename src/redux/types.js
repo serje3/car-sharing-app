@@ -1,0 +1,7 @@
+export const REQUEST_MARKERS = "MAP/REQUEST_MARKERS"
+export const FETCH_MARKERS = "MAP/FETCH_MARKERS"
+
+export const REQUEST_CAR = "CAR/REQUEST_CAR"
+export const FETCH_CAR = "CAR/FETCH_CAR"
+export const SHOW_CAR_INFO = "CAR/SHOW_CAR_INFO"
+export const HIDE_CAR_INFO = "CAR/HIDE_CAR_INFO"
