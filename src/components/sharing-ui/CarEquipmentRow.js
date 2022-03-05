@@ -3,11 +3,7 @@ import { equipments } from "./equipments";
 
 export const CarEquipmentRow = ({ equipment }) => {
     return (
-        <div className="d-grid gap-3" style={{
-            gridTemplateColumns: "1fr",
-            gridColumnStart: 2,
-            gridColumnEnd: 3,
-        }}>
+        <div className="d-grid gap-3 car-card-equipment">
             <div className="col d-flex justify-content-start text-secondary">Оборудование</div>
             <div className="equipList d-grid gap-3">
                 {equipment && equipment.map((equip)=>{

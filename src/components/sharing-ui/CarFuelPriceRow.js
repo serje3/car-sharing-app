@@ -4,12 +4,7 @@ import React from "react";
 
 
 export const CarFuelPriceRow = ({fuel, price, currency}) => (
-            <div className="d-grid" style={{
-                gridTemplateColumns: "1fr 1fr",
-                gridGap:"6px",
-                gridColumnStart: 2,
-                gridColumnEnd: 3,
-            }}>
+            <div className="d-grid car-card-fuel-price">
                 <div className="d-flex justify-content-start gap-3" style={{
                     minWidth: "110px"
                 }}>
