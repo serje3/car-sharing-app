@@ -8,21 +8,22 @@ export const CarFuelPriceRow = ({fuel, price, currency}) => (
                 gridTemplateColumns: "1fr 1fr",
                 gridGap:"6px",
                 gridColumnStart: 2,
-                gridColumnEnd: 3
+                gridColumnEnd: 3,
             }}>
-                <div className="d-flex justify-content-between" style={{
-                    minWidth: 100
+                <div className="d-flex justify-content-start gap-3" style={{
+                    minWidth: "110px"
                 }}>
                     <img
                         src={gasPumpIcon}
                         className=""
-                        alt="fuel percent"/>
+                        alt="fuel percent"
+                    />
                     <div
                         className="gap-1 align-self-center fw-bold"
                     >{fuel} км
                     </div>
                 </div>
-                <div className="d-flex"
+                <div className="d-flex justify-content-start gap-2"
                      style={{
                          minWidth: "235px"
                      }}
