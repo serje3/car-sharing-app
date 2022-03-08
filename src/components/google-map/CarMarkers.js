@@ -3,6 +3,7 @@ import { Marker } from "@react-google-maps/api";
 import { connect } from "react-redux";
 import geoIcon from '../../assets/svg/geo-alt-fill.svg'
 import { fetchCar, showCarInfo } from "../../redux/actions";
+import {OrderStatus} from "../sharing-ui/utils/orderStatus";
 
 
 const CarMarkers = (props) => {
@@ -26,8 +27,13 @@ const CarMarkers = (props) => {
             <Marker
                 position={position}
                 icon={geoIcon}
+                visible={
+                    props.booking.carId === marker.id ||
+                    props.booking.orderStatus === OrderStatus.ENDED_CONFIRMED
+                }
                 onClick={(event) => {
-                    props.fetchCar()
+                    const vehicleId = marker.id
+                    props.fetchCar(vehicleId)
                     console.log(event.domEvent.target)
                     event.domEvent.target.classList.add("ignore-onclickoutside");
                     if (!props.toggle) {
@@ -41,7 +47,8 @@ const CarMarkers = (props) => {
 }
 
 const mapStateToProps = state => ({
-    markers: state.map.markers
+    markers: state.map.markers,
+    booking: state.booking
 })
 
 const mapDispatchToProps = {

@@ -1,4 +1,4 @@
-import { FETCH_CAR, SHOW_CAR_INFO, HIDE_CAR_INFO } from "./types";
+import {FETCH_CAR, SHOW_CAR_INFO, HIDE_CAR_INFO} from "./types";
 
 
 const initialState = {

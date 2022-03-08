@@ -11,9 +11,13 @@ export const Loader = () => {
         height: `${computedSize}px`,
     }
     return (
-        <div className="d-flex align-items-center justify-content-center" style={
+        <div className="position-absolute d-flex align-items-center justify-content-center" style={
             {
-                height: "100%"
+                top:0,
+                left: "50%",
+                transform:"translateX(-50%)",
+                height: "100%",
+                zIndex: 1000
             }
         }>
             <div className="spinner-border text-danger center-block" role="status" style={spinnerSizeStyle}>

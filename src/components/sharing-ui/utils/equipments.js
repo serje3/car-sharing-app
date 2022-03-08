@@ -1,6 +1,6 @@
-import bluetoothSvg from "./../../assets/svg/bluetooth.svg"
-import mapSvg from "../../assets/svg/map.svg"
-import childSvg from "../../assets/svg/child.svg"
+import bluetoothSvg from "../../../assets/svg/bluetooth.svg"
+import mapSvg from "../../../assets/svg/map.svg"
+import childSvg from "../../../assets/svg/child.svg"
 
 //navigator
 // bluetooth
@@ -12,7 +12,7 @@ const EquipWrapper = (props) =>
         <span className="align-self-center">{props.children}</span>
     </>)
 
-export const equipments = {
+export const EquipmentMap = {
     "navigator":
         <EquipWrapper
             equip={"navigator"}
