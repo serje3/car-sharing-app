@@ -1,5 +1,4 @@
-export async function fetchJSON(url){
-    console.log(url)
-    const response = await fetch(url)
-    return await response.json()
+export async function fetchJSON(url, method = "GET") {
+    const response = await fetch(url, {method: method})
+    return response.json();
 }
